@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+</head>
+<body>
+    <img id="myImage" src="image1.jpg" alt="Image 1" onclick="changeImage()">
+    
+    <script>
+        const image2 = "image2.jpg"; // Path to the second image
+
+        function changeImage() {
+            const imageElement = document.getElementById("myImage");
+            imageElement.src = image2;
+            imageElement.alt = "Image 2"; // Update alt text for accessibility
+        }
+    </script>
+</body>
+</html>

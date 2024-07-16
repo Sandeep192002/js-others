@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Paragraphs</title>
+    <style>
+        .original {
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="paragraph1">This is the first paragraph.</p>
+    <p id="paragraph3">This is the third paragraph.</p>
+
+    <button onclick="insertNewParagraph()">Insert Paragraph</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="resetStyle()">Reset Style</button>
+
+    <script>
+        let newParagraph; // Variable to store the new paragraph element
+
+        function insertNewParagraph() {
+            const parentElement = document.body;
+            newParagraph = document.createElement("p");
+            newParagraph.innerText = "This is the new paragraph.";
+            newParagraph.classList.add("original"); // Add initial style class
+            parentElement.insertBefore(newParagraph, document.getElementById("paragraph3"));
+        }
+
+        function changeStyle() {
+            if (newParagraph) {
+                newParagraph.style.backgroundColor = "yellow";
+                newParagraph.style.fontSize = "1.5em";
+            }
+        }
+
+        function resetStyle() {
+            if (newParagraph) {
+                newParagraph.classList.remove("original"); // Remove initial style
+                newParagraph.style.backgroundColor = ""; // Reset background color
+                newParagraph.style.fontSize = ""; // Reset font size
+            }
+        }
+    </script>
+</body>
+</html
